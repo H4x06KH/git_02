@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class DestroyOutOfBounds : MonoBehaviour
 {
@@ -24,7 +25,9 @@ public class DestroyOutOfBounds : MonoBehaviour
            Destroy(gameObject);
             if (isCausingGameOver)
             {
+                
                 Debug.Log("Game over!");
+                SceneManager.LoadScene(0);
             }
                 
         }
