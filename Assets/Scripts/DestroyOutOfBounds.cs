@@ -3,6 +3,8 @@ using UnityEngine.Rendering;
 
 public class DestroyOutOfBounds : MonoBehaviour
 {
+    public bool isCausingGameOver = false;
+
 
     private float topBound = 30;
     private float bottomBound = -10;
@@ -19,7 +21,12 @@ public class DestroyOutOfBounds : MonoBehaviour
         if (transform.position.z > topBound || 
             transform.position.z < bottomBound)
         {
-            Destroy(gameObject);
+           Destroy(gameObject);
+            if (isCausingGameOver)
+            {
+                Debug.Log("Game over!");
+            }
+                
         }
        
     }
